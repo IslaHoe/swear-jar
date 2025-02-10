@@ -1,0 +1,24 @@
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
+export function SwearJar() {
+  const [count, setCount] = useState(0);
+  
+  return (
+    <Card className="w-96">
+      <CardHeader>
+        <CardTitle className="text-center text-2xl">Virtual Swear Jar</CardTitle>
+      </CardHeader>
+      <CardContent className="flex flex-col items-center gap-4">
+        <div className="text-6xl font-bold">{count}</div>
+        <Button 
+          className="w-full text-lg py-6"
+          onClick={() => setCount(count + 1)}
+        >
+          Add a Swear
+        </Button>
+      </CardContent>
+    </Card>
+  );
+}
